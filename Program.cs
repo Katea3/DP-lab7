@@ -1,65 +1,40 @@
-﻿﻿
+using System;
+using System.Diagnostics;
+
 class Maximum
 {
-
     static void Main()
     {
+        // Исходный массив чисел
         int[] a = [1, 2, 3, 4, 5, 7];
 
+        // Вызов функции поиска максимума
         int max = FindMax(a);
 
+        // Вывод результата
         Console.WriteLine(max);
     }
 
+    // Функция поиска максимального элемента массива
     static int FindMax(int[] a)
     {
+        // Проверка, что массив не пустой
         Debug.Assert(a.Length > 0);
 
+        // Предполагаем, что первый элемент – максимальный
         int maximum = a[0];
 
+        // Перебираем оставшиеся элементы массива
         for (int i = 1; i < a.Length; i++)
         {
+            // Если текущий элемент больше найденного максимума — обновляем значение
             if (a[i] > maximum)
             {
                 maximum = a[i];
             }
         }
 
+        // Возвращаем найденное максимальное значение
         return maximum;
     }
-
 }
-
-// class Program
-// {
-//     static void Main()
-//     {
-//         var a = new List<int> { 1, 2, 3, 4, 5 };
-//         var b = new List<int> { 1, 2, 3, 4, 5 };
-//         var c = new List<int>();
-//         AddSum(a, b, c);
-//         Console.WriteLine(string.Join(", ", c));
-//         Thread.Sleep(500);
-//         c.Clear();
-//         AddSumWhile(a, b, c);
-//         Console.WriteLine(string.Join(", ", c));
-//     }
-
-//     static void AddSum(List<int> a, List<int> b, List<int> c)
-//     {
-//         for (int i = 0; i < a.Count; i++)
-//         {
-//             c.Add(a[i] + b[i]);
-//         }
-//     }
-
-//     static void AddSumWhile(List<int> a, List<int> b, List<int> c)
-//     {
-//         int i = 0;
-//         while (i < a.Count)
-//         {
-//             c.Add(a[i] + b[i]);
-//             i++;
-//         }
-//     }
-// }
